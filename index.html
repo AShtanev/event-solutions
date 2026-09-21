@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Event Solutions</title>
-<meta name="description" content="Interactive installations, live AR graphics, previsualization and stage robotics for events.">
+<meta name="description" content="Interactive installations, interactive outdoor advertising, real-time graphics and stage robotics for events.">
 <style>
   :root{
     --bg:#0e0f12; --surface:#16181d; --surface-2:#1d2026; --line:#2a2e37;
     --text:#f2f3f5; --muted:#9aa1ad; --accent:#ffc857; --accent-dim:#8a6d2f;
     --radius:14px; --maxw:1180px;
   }
-  :root:not([data-theme="dark"]) [data-force-light]{}
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
@@ -40,14 +39,23 @@
   h2{margin:0; font-size:clamp(21px,3.4vw,28px); letter-spacing:-.015em; font-weight:640}
   .sec-lede{margin:0 0 26px; color:var(--muted); max-width:66ch; font-size:15px}
 
-  .grid{display:grid; gap:26px 22px; align-items:stretch; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  /* Горизонтальные и вертикальные ролики раскладываются отдельными рядами:
+     общая ширина колонки делает смешанный ряд рваным.
+     Карточка занимает столько колонок, сколько в ней роликов. */
+  .grid{display:grid; gap:26px 22px; align-items:stretch; grid-template-columns:repeat(3,1fr)}
+  .grid.vertical{grid-template-columns:repeat(4,1fr)}
   .grid + .grid{margin-top:26px}
-  .grid.vertical{grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); justify-content:start}
-  .grid.vertical figure{max-width:320px}
-  figure{margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column}
+
+  figure{
+    margin:0; grid-column:span var(--span,1);
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .strip{display:grid; gap:6px; grid-template-columns:repeat(var(--n,1),1fr); background:var(--line)}
   .vbox{background:#000; aspect-ratio:16/9}
   .grid.vertical .vbox{aspect-ratio:9/16}
   video{display:block; width:100%; height:100%; object-fit:contain; background:#000}
+
   figcaption{padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1}
   .cap-t{font-weight:620; font-size:15.5px; letter-spacing:-.01em}
   .cap-d{color:var(--muted); font-size:14px; margin:0}
@@ -58,12 +66,17 @@
   footer a:hover{text-decoration:underline}
   .note{margin-top:10px; font-size:13px; color:#6f7784}
 
-  @media (max-width:560px){
+  @media (max-width:1000px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .grid.vertical{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:640px){
     header{padding:36px 0 26px}
     section{padding:34px 0 6px}
     .grid,.grid.vertical{gap:20px; grid-template-columns:1fr}
-    .grid.vertical figure{max-width:none}
     .grid + .grid{margin-top:20px}
+    figure{--span:1}
+    .strip{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -72,7 +85,7 @@
 
   <header>
     <div class="bar">
-      <div class="brand" id="brand">Event Solutions</div>
+      <div class="brand">Event Solutions</div>
       <div class="langs" role="group" aria-label="Language">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="ru" aria-pressed="false">RU</button>
@@ -101,12 +114,12 @@ const DATA = {
     blocks: [
       {
         t: "Interactive installations and games",
-        l: "Hardware and software for an activation zone: a crowd walks up and plays with no app, no signup and no controller.",
+        l: "Gamified zones that earn the wow moment on site and make the brand stick afterwards.",
         items: [
-          { f:"01-media-facade-game", t:"Group game on a media facade", d:"Camera-based motion tracking scores up to 78 players at once on a large LED wall. Guests play with their hands — nothing to install, nothing to hold.", dur:"0:14" },
+          { f:"01-media-facade-game", t:"Interactive game on a media facade", d:"Camera-based motion tracking for 2–4 players at once on a large LED wall. Played with bare hands — nothing to install, nothing to hold.", dur:"0:14" },
           { f:"02-racing-terminals", t:"Multiplayer racing on paired terminals", d:"Several touch stations networked into one race with a shared leaderboard. Scales from two seats to a full tournament zone.", dur:"0:25" },
-          { f:"03-led-wall-race", t:"Phone-controlled race on an LED wall", d:"A long-format LED wall renders the track; the audience steers from their own phones through a web page, with no app install. Deployed at an international motorsport championship.", dur:"0:15" },
-          { f:"04-projection-mapping-rig", t:"Projection mapping on real machinery", d:"Video mapped onto an actual vehicle, driven from an interactive console. Visitors trigger animated cutaways that explain the hydraulics and drivetrain underneath.", dur:"1:13" }
+          { f:"03-led-wall-race", t:"LED-wall race played from tablets", d:"The track runs on a long-format LED wall. Players race from tablets with a pre-installed app, while a master tablet changes race parameters on the fly. Deployed at an international motorsport championship.", dur:"0:15" },
+          { f:"04-projection-mapping-rig", t:"Interactive presentation of heavy machinery", d:"Projection onto an actual vehicle with the key figures called out on the body. A console triggers component animations and camera fly-throughs.", dur:"1:13" }
         ]
       },
       {
@@ -118,14 +131,11 @@ const DATA = {
         ]
       },
       {
-        t: "Real-time graphics: previz and live AR",
-        l: "One engine across the whole job. The show is built and signed off in 3D before load-in; on the day, the same real-time pipeline renders AR into the live camera feed and goes straight to air.",
+        t: "Real-time graphics",
+        l: "3D rendered live and matched to the camera, so the audience in the room and the audience on air are looking at the same scene.",
         items: [
-          { f:"11-previz-stage", t:"Full-venue previsualization", d:"Lighting, lasers, scenic elements and crowd modelled for a large open-air stage, used to lock the design before anything is built.", dur:"0:32" },
-          { f:"10-previz-control-room", t:"Previz in the control room", d:"Previsualization played back against live camera feeds so the director can match planned looks to what the cameras actually see.", dur:"0:32" },
-          { f:"07-ar-headpiece", t:"Headpiece tracked to a performer", d:"A 3D headpiece locked to the artist's head through fast movement and profile turns, rendered live into the broadcast feed.", dur:"1:00" },
-          { f:"08-ar-particles", t:"AR celestial body and particles", d:"A planet and a drifting particle field composited into the stage in real time, reacting to the performance below.", dur:"0:14" },
-          { f:"09-ar-phone", t:"Oversized AR object on stage", d:"A giant phone carrying a live video call, plus dimensional typography built into the set — all rendered in-camera, nothing added in post.", dur:"0:21" }
+          { f:["11-previz-stage","10-previz-control-room"], t:"Real-time AR graphics", d:"Live at Riyadh Boulevard World, a set by a local star.", dur:"0:32 · 0:32" },
+          { f:["07-ar-headpiece","08-ar-particles","09-ar-phone"], t:"XR concert for VK", d:"Graphics rendered in real time and matched to the camera's position.", dur:"1:00 · 0:14 · 0:21" }
         ]
       },
       {
@@ -133,11 +143,9 @@ const DATA = {
         l: "Humanoid robots as part of the programme — performing, hosting and working the room, on our own control software.",
         items: [
           { f:"12-robot-dancer-show", t:"Humanoid and choreographer duet — full show", d:"A humanoid performing a full duet with choreographer Alexander Mogilev at the All-Russian Competition of Ballet Dancers and Choreographers, Yoshkar-Ola.", dur:"5:39" },
-          { f:"13-robot-conductor-symphony", t:"Robot conductor — Symphony of Innovations", d:"A humanoid on the conductor's podium for Rosconcert's show Symphony of Innovations.", dur:"0:18" },
-          { f:"14-robot-conductor-orchestra", t:"Conducting a live orchestra", d:"The robot conducting a full symphony orchestra in front of a seated hall, Prokofiev's Dance of the Knights.", dur:"0:50" },
-          { f:"15-robot-conductor-gala", t:"Gala stage appearance", d:"The humanoid on a large gala stage with a full house — the same platform dressed for a different show.", dur:"0:35" },
-          { f:"16-vr-teleoperation", t:"VR teleoperation", d:"An operator in a headset drives the humanoid in real time; arms, hands and head follow the operator at 60 fps. Lets a live host puppeteer the robot from backstage.", dur:"0:44" },
-          { f:"17-robot-bartender", t:"Robot bartender", d:"A humanoid working a bar — picking up bottles, pouring and serving guests as a standing attraction.", dur:"1:19" }
+          { f:"17-robot-bartender", t:"Robot bartender", d:"A humanoid working a bar — picking up bottles, pouring and serving guests as a standing attraction.", dur:"1:19" },
+          { f:["13-robot-conductor-symphony","14-robot-conductor-orchestra","15-robot-conductor-gala"], t:"Robot conductor — Symphony of Innovations", d:"A humanoid on the conductor's podium for Rosconcert's show Symphony of Innovations.", dur:"0:18 · 0:50 · 0:35" },
+          { f:"16-vr-teleoperation", t:"VR teleoperation", d:"An operator in a headset drives the humanoid in real time; arms, hands and head follow the operator at 60 fps. Lets a live host puppeteer the robot from backstage.", dur:"0:44" }
         ]
       }
     ]
@@ -150,12 +158,12 @@ const DATA = {
     blocks: [
       {
         t: "Интерактивные инсталляции и игры",
-        l: "Железо и софт для активационной зоны: человек подходит и играет — без приложения, без регистрации, без контроллера в руках.",
+        l: "Геймификация зоны: вау-эффект на площадке и бренд, который запоминают надолго.",
         items: [
-          { f:"01-media-facade-game", t:"Групповая игра на медиафасаде", d:"Трекинг движения по камере ведёт счёт одновременно для 78 участников на большом LED-экране. Играют руками — ничего не нужно ставить и нечего держать.", dur:"0:14" },
+          { f:"01-media-facade-game", t:"Интерактивная игра на медиафасаде", d:"Трекинг движения по камере: одновременно играют 2–4 человека на большом LED-экране. Управление руками — ничего не устанавливать и нечего держать.", dur:"0:14" },
           { f:"02-racing-terminals", t:"Мультиплеерная гонка на терминалах", d:"Несколько тач-станций связаны в одну гонку с общей таблицей результатов. Масштабируется от двух мест до полноценной турнирной зоны.", dur:"0:25" },
-          { f:"03-led-wall-race", t:"Гонка на LED-экране с управлением со смартфона", d:"Трасса выводится на длинный LED-экран, зрители рулят со своих телефонов через веб-страницу — ставить приложение не нужно. Реализовано на международном автоспортивном чемпионате.", dur:"0:15" },
-          { f:"04-projection-mapping-rig", t:"Проекционный мэппинг на технику", d:"Видео ложится на реальную машину, управление — с интерактивного пульта. Посетитель запускает анимированные разрезы, которые показывают гидравлику и трансмиссию внутри.", dur:"1:13" }
+          { f:"03-led-wall-race", t:"Гонка на LED-экране с планшетов", d:"Трасса выводится на длинный LED-экран. Участники играют с планшетов с предустановленным приложением, а мастер-планшет меняет параметры гонки на ходу. Реализовано на международном автоспортивном чемпионате.", dur:"0:15" },
+          { f:"04-projection-mapping-rig", t:"Интерактивная презентация крупной техники", d:"Проекция на реальную машину с выводом ключевой информации прямо по корпусу. С пульта запускаются анимации узлов и пролёты камеры.", dur:"1:13" }
         ]
       },
       {
@@ -167,14 +175,11 @@ const DATA = {
         ]
       },
       {
-        t: "Графика в реальном времени: превиз и AR в эфире",
-        l: "Один движок на всю работу. Шоу собирается и утверждается в 3D до монтажа, а в день эфира тот же real-time конвейер считает AR поверх живой камеры и отдаёт сразу в сигнал.",
+        t: "Графика в реальном времени",
+        l: "Трёхмерная графика считается живьём и подстраивается под камеру — зритель в зале и зритель в эфире видят одну и ту же сцену.",
         items: [
-          { f:"11-previz-stage", t:"Превиз площадки целиком", d:"Свет, лазеры, декорации и зрители смоделированы для большой открытой сцены. Используется, чтобы утвердить оформление до того, как что-либо построено.", dur:"0:32" },
-          { f:"10-previz-control-room", t:"Превиз в режиссёрской", d:"Превизуализация проигрывается рядом с живыми камерами — режиссёр сверяет задуманные планы с тем, что реально видят камеры.", dur:"0:32" },
-          { f:"07-ar-headpiece", t:"Головной убор с трекингом на артисте", d:"3D-объект держится на голове артиста при быстрых движениях и поворотах в профиль, рендерится живьём в эфирный сигнал.", dur:"1:00" },
-          { f:"08-ar-particles", t:"AR-планета и частицы", d:"Небесное тело и поле частиц вживую вкомпонованы в сцену и реагируют на происходящее на площадке.", dur:"0:14" },
-          { f:"09-ar-phone", t:"Крупный AR-объект на сцене", d:"Гигантский телефон с живым видеозвонком и объёмная типографика, встроенные в декорацию. Всё считается в камеру, на постобработке ничего не дорисовано.", dur:"0:21" }
+          { f:["11-previz-stage","10-previz-control-room"], t:"AR-графика в реальном времени", d:"Live в Riyadh Boulevard World, выступление местной звезды.", dur:"0:32 · 0:32" },
+          { f:["07-ar-headpiece","08-ar-particles","09-ar-phone"], t:"XR-концерт для VK", d:"Графика рендерится в реальном времени и подстраивается под положение камеры.", dur:"1:00 · 0:14 · 0:21" }
         ]
       },
       {
@@ -182,11 +187,9 @@ const DATA = {
         l: "Гуманоидные роботы как часть программы — выступают, ведут и работают с гостями. На нашем собственном управляющем софте.",
         items: [
           { f:"12-robot-dancer-show", t:"Дуэт гуманоида и хореографа — полное шоу", d:"Гуманоид исполняет полноценный дуэт с хореографом Александром Могилёвым на Всероссийском конкурсе артистов балета и хореографов в Йошкар-Оле.", dur:"5:39" },
-          { f:"13-robot-conductor-symphony", t:"Робот-дирижёр — «Симфония инноваций»", d:"Гуманоид за дирижёрским пультом в шоу Росконцерта «Симфония инноваций».", dur:"0:18" },
-          { f:"14-robot-conductor-orchestra", t:"Дирижирование живым оркестром", d:"Робот дирижирует симфоническим оркестром перед полным залом — «Танец рыцарей» Прокофьева.", dur:"0:50" },
-          { f:"15-robot-conductor-gala", t:"Выход на гала-сцене", d:"Гуманоид на большой гала-сцене при полном зале — та же платформа в оформлении другого шоу.", dur:"0:35" },
-          { f:"16-vr-teleoperation", t:"Телеоперация через VR", d:"Оператор в шлеме управляет гуманоидом в реальном времени: руки, кисти и голова повторяют движения с частотой 60 кадров в секунду. Позволяет ведущему «оживлять» робота из-за кулис.", dur:"0:44" },
-          { f:"17-robot-bartender", t:"Робот-бармен", d:"Гуманоид работает за барной стойкой — берёт бутылки, наливает и подаёт гостям. Формат постоянно действующей активности.", dur:"1:19" }
+          { f:"17-robot-bartender", t:"Робот-бармен", d:"Гуманоид работает за барной стойкой — берёт бутылки, наливает и подаёт гостям. Формат постоянно действующей активности.", dur:"1:19" },
+          { f:["13-robot-conductor-symphony","14-robot-conductor-orchestra","15-robot-conductor-gala"], t:"Робот-дирижёр — «Симфония инноваций»", d:"Гуманоид за дирижёрским пультом в шоу Росконцерта «Симфония инноваций».", dur:"0:18 · 0:50 · 0:35" },
+          { f:"16-vr-teleoperation", t:"Телеоперация через VR", d:"Оператор в шлеме управляет гуманоидом в реальном времени: руки, кисти и голова повторяют движения с частотой 60 кадров в секунду. Позволяет ведущему «оживлять» робота из-за кулис.", dur:"0:44" }
         ]
       }
     ]
@@ -194,6 +197,34 @@ const DATA = {
 };
 
 const PORTRAIT = new Set(["05-dooh-kiosk-calculator","06-dooh-slider-facade","13-robot-conductor-symphony","14-robot-conductor-orchestra","15-robot-conductor-gala","16-vr-teleoperation"]);
+const filesOf = it => Array.isArray(it.f) ? it.f : [it.f];
+
+function card(it){
+  const files = filesOf(it);
+  const fig = document.createElement("figure");
+  fig.style.setProperty("--span", files.length);
+
+  const strip = document.createElement("div");
+  strip.className = "strip";
+  strip.style.setProperty("--n", files.length);
+  files.forEach(name => {
+    const box = document.createElement("div"); box.className = "vbox";
+    const v = document.createElement("video");
+    v.controls = true; v.preload = "none"; v.playsInline = true;
+    v.poster = `posters/${name}.jpg`;
+    v.src = `videos/${name}.mp4`;
+    box.append(v); strip.append(box);
+  });
+
+  const cap = document.createElement("figcaption");
+  const t = document.createElement("div"); t.className = "cap-t"; t.textContent = it.t;
+  const p = document.createElement("p"); p.className = "cap-d"; p.textContent = it.d;
+  const du = document.createElement("div"); du.className = "dur"; du.textContent = it.dur;
+  cap.append(t, p, du);
+
+  fig.append(strip, cap);
+  return fig;
+}
 
 function render(lang){
   const d = DATA[lang];
@@ -215,27 +246,8 @@ function render(lang){
     const lede = document.createElement("p"); lede.className = "sec-lede"; lede.textContent = b.l;
     sec.append(head, lede);
 
-    const card = it => {
-      const fig = document.createElement("figure");
-      const box = document.createElement("div"); box.className = "vbox";
-      const v = document.createElement("video");
-      v.controls = true; v.preload = "none"; v.playsInline = true;
-      v.poster = `posters/${it.f}.jpg`;
-      v.src = `videos/${it.f}.mp4`;
-      box.append(v);
-      const cap = document.createElement("figcaption");
-      const t = document.createElement("div"); t.className = "cap-t"; t.textContent = it.t;
-      const p = document.createElement("p"); p.className = "cap-d"; p.textContent = it.d;
-      const du = document.createElement("div"); du.className = "dur"; du.textContent = it.dur;
-      cap.append(t, p, du);
-      fig.append(box, cap);
-      return fig;
-    };
-
-    // горизонтальные и вертикальные раскладываются отдельными рядами:
-    // в смешанном блоке одинаковая ширина колонки делает ряд рваным
-    [["grid", b.items.filter(it => !PORTRAIT.has(it.f))],
-     ["grid vertical", b.items.filter(it =>  PORTRAIT.has(it.f))]
+    [["grid",          b.items.filter(it => !PORTRAIT.has(filesOf(it)[0]))],
+     ["grid vertical", b.items.filter(it =>  PORTRAIT.has(filesOf(it)[0]))]
     ].forEach(([cls, items]) => {
       if (!items.length) return;
       const g = document.createElement("div"); g.className = cls;
