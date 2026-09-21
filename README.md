@@ -1,7 +1,7 @@
 <h1 align="center">Event Solutions</h1>
 
 <p align="center">
-  Interactive installations, live AR graphics, stage previsualization and humanoid robots on stage.<br>
+  Interactive games and installations, interactive outdoor advertising, real-time graphics for live shows, and robots on stage and among the audience.<br>
   Everything below was filmed at real events, on real hardware.
 </p>
 
@@ -71,7 +71,7 @@ Client names are withheld where the work is under NDA; brand marks visible on sc
 
 <br>
 
-Интерактивные инсталляции, AR-графика в прямом эфире, превизуализация сцены и гуманоидные роботы в программе мероприятия. Всё снято на реальных площадках и на реальном оборудовании.
+Интерактивные игры и инсталляции, интерактивная наружная реклама, графика в реальном времени для концертов и роботы на сцене и среди людей. Всё снято на реальных площадках и на реальном оборудовании.
 
 **[▶ Открыть витрину — все 17 видео, играет на телефоне и планшете](https://ashtanev.github.io/event-solutions/)** (переключатель RU в правом верхнем углу)
 

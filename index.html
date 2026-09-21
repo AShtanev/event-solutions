@@ -40,12 +40,14 @@
   h2{margin:0; font-size:clamp(21px,3.4vw,28px); letter-spacing:-.015em; font-weight:640}
   .sec-lede{margin:0 0 26px; color:var(--muted); max-width:66ch; font-size:15px}
 
-  .grid{display:grid; gap:26px 22px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .grid{display:grid; gap:26px 22px; align-items:stretch; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .grid + .grid{margin-top:26px}
+  .grid.vertical{grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); justify-content:start}
+  .grid.vertical figure{max-width:320px}
   figure{margin:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column}
-  .vbox{background:#000; position:relative}
-  video{display:block; width:100%; height:auto; background:#000}
-  figure.portrait .vbox{display:flex; justify-content:center}
-  figure.portrait video{max-height:560px; width:auto; max-width:100%}
+  .vbox{background:#000; aspect-ratio:16/9}
+  .grid.vertical .vbox{aspect-ratio:9/16}
+  video{display:block; width:100%; height:100%; object-fit:contain; background:#000}
   figcaption{padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1}
   .cap-t{font-weight:620; font-size:15.5px; letter-spacing:-.01em}
   .cap-d{color:var(--muted); font-size:14px; margin:0}
@@ -59,8 +61,9 @@
   @media (max-width:560px){
     header{padding:36px 0 26px}
     section{padding:34px 0 6px}
-    .grid{gap:20px; grid-template-columns:1fr}
-    figure.portrait video{max-height:none; width:100%}
+    .grid,.grid.vertical{gap:20px; grid-template-columns:1fr}
+    .grid.vertical figure{max-width:none}
+    .grid + .grid{margin-top:20px}
   }
 </style>
 </head>
@@ -92,7 +95,7 @@
 const DATA = {
   en: {
     title: "Interactive solutions for events",
-    lede: "Installations that a crowd can play without an app, live AR in broadcast, stage previsualization and humanoid robots on stage. Everything below was filmed at real events, on real hardware.",
+    lede: "Interactive games and installations, interactive outdoor advertising, real-time graphics for live shows, and robots on stage and among the audience. Everything below was filmed at real events, on real hardware.",
     foot: "Every clip is production footage from a delivered project. Source masters are available at full resolution on request.",
     note: "Client names are withheld where the work is under NDA; brand marks visible on screen belong to their owners.",
     blocks: [
@@ -141,7 +144,7 @@ const DATA = {
   },
   ru: {
     title: "Интерактивные решения для мероприятий",
-    lede: "Инсталляции, в которые толпа играет без приложения, AR-графика в прямом эфире, превизуализация сцены и гуманоидные роботы в программе. Всё ниже снято на реальных мероприятиях и на реальном оборудовании.",
+    lede: "Интерактивные игры и инсталляции, интерактивная наружная реклама, графика в реальном времени для концертов и роботы на сцене и среди людей. Всё ниже снято на реальных мероприятиях и на реальном оборудовании.",
     foot: "Каждый ролик — съёмка со сданного проекта. Исходники в полном разрешении предоставим по запросу.",
     note: "Названия заказчиков не указаны там, где работа под NDA; товарные знаки в кадре принадлежат их владельцам.",
     blocks: [
@@ -210,11 +213,10 @@ function render(lang){
     const h2 = document.createElement("h2"); h2.textContent = b.t;
     head.append(num, h2);
     const lede = document.createElement("p"); lede.className = "sec-lede"; lede.textContent = b.l;
-    const grid = document.createElement("div"); grid.className = "grid";
+    sec.append(head, lede);
 
-    b.items.forEach(it => {
+    const card = it => {
       const fig = document.createElement("figure");
-      if (PORTRAIT.has(it.f)) fig.classList.add("portrait");
       const box = document.createElement("div"); box.className = "vbox";
       const v = document.createElement("video");
       v.controls = true; v.preload = "none"; v.playsInline = true;
@@ -227,10 +229,20 @@ function render(lang){
       const du = document.createElement("div"); du.className = "dur"; du.textContent = it.dur;
       cap.append(t, p, du);
       fig.append(box, cap);
-      grid.append(fig);
+      return fig;
+    };
+
+    // горизонтальные и вертикальные раскладываются отдельными рядами:
+    // в смешанном блоке одинаковая ширина колонки делает ряд рваным
+    [["grid", b.items.filter(it => !PORTRAIT.has(it.f))],
+     ["grid vertical", b.items.filter(it =>  PORTRAIT.has(it.f))]
+    ].forEach(([cls, items]) => {
+      if (!items.length) return;
+      const g = document.createElement("div"); g.className = cls;
+      items.forEach(it => g.append(card(it)));
+      sec.append(g);
     });
 
-    sec.append(head, lede, grid);
     main.append(sec);
   });
 }
