@@ -12,8 +12,7 @@
 <p align="center">
   <a href="#interactive-installations-and-games">Installations &amp; games</a> ·
   <a href="#interactive-outdoor-advertising">Interactive DOOH</a> ·
-  <a href="#live-ar-graphics-in-broadcast">Live AR</a> ·
-  <a href="#stage-previsualization">Previz</a> ·
+  <a href="#real-time-graphics-previz-and-live-ar">Previz &amp; live AR</a> ·
   <a href="#robots-on-stage-and-in-the-venue">Stage robotics</a> ·
   <a href="#work-with-us">Work with us</a>
 </p>
@@ -37,22 +36,15 @@ Street furniture that reacts to a passer-by and drives the big screen above it i
 |---|---|
 | **[Touch kiosk driving a city facade](videos/05-dooh-kiosk-calculator.mp4)** · 0:33<br>A passer-by enters their parameters on the kiosk and gets a personal figure; the result is mirrored live onto a large city facade screen. Built for a major bank. | **[One-gesture street control](videos/06-dooh-slider-facade.mp4)** · 0:11<br>A street stand with a single physical slider. One pull switches the creative running on the facade above — deliberately reduced to a gesture anyone can do while walking past. |
 
-## Live AR graphics in broadcast
+## Real-time graphics: previz and live AR
 
-Real-time 3D composited into a live camera feed — tracked, lit to match and delivered straight to air.
+One engine across the whole job. The show is built and signed off in 3D before load-in; on the day, the same real-time pipeline renders AR into the live camera feed and goes straight to air.
 
 | | |
 |---|---|
+| **[Full-venue previsualization](videos/11-previz-stage.mp4)** · 0:32<br>Lighting, lasers, scenic elements and crowd modelled for a large open-air stage, used to lock the design before anything is built. | **[Previz in the control room](videos/10-previz-control-room.mp4)** · 0:32<br>Previsualization played back against live camera feeds so the director can match planned looks to what the cameras actually see. |
 | **[Headpiece tracked to a performer](videos/07-ar-headpiece.mp4)** · 1:00<br>A 3D headpiece locked to the artist's head through fast movement and profile turns, rendered live into the broadcast feed. | **[AR celestial body and particles](videos/08-ar-particles.mp4)** · 0:14<br>A planet and a drifting particle field composited into the stage in real time, reacting to the performance below. |
 | **[Oversized AR object on stage](videos/09-ar-phone.mp4)** · 0:21<br>A giant phone carrying a live video call, plus dimensional typography built into the set — all rendered in-camera, nothing added in post. | |
-
-## Stage previsualization
-
-The whole show built in 3D before load-in, so lighting, scenic and camera are agreed on screen instead of on site.
-
-| | |
-|---|---|
-| **[Previz in the control room](videos/10-previz-control-room.mp4)** · 0:32<br>Previsualization played back against live camera feeds so the director can match planned looks to what the cameras actually see. | **[Full-venue previsualization](videos/11-previz-stage.mp4)** · 0:32<br>Lighting, lasers, scenic elements and crowd modelled for a large open-air stage, used to lock the design before anything is built. |
 
 ## Robots on stage and in the venue
 
@@ -87,9 +79,8 @@ Client names are withheld where the work is under NDA; brand marks visible on sc
 
 1. **Интерактивные инсталляции и игры** — групповая игра на медиафасаде на 78 участников, мультиплеерная гонка на связанных терминалах, гонка на LED-экране с управлением со смартфонов, проекционный мэппинг на технику с интерактивным пультом.
 2. **Интерактивная наружная реклама** — тач-киоск, выводящий персональный результат на городской фасад; уличная стойка, переключающая креатив одним движением слайдера.
-3. **AR-графика в прямом эфире** — трекинг 3D-объекта на голове артиста, AR-планета и частицы, крупный AR-объект с живым видеозвонком в декорации.
-4. **Превизуализация сцены** — превиз в режиссёрской рядом с живыми камерами и превиз площадки целиком до монтажа.
-5. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта, дирижирование живым оркестром, телеоперация через VR, робот-бармен.
+3. **Графика в реальном времени: превиз и AR в эфире** — превиз площадки целиком и превиз в режиссёрской рядом с живыми камерами; трекинг 3D-объекта на голове артиста, AR-планета и частицы, крупный AR-объект с живым видеозвонком в декорации.
+4. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта, дирижирование живым оркестром, телеоперация через VR, робот-бармен.
 
 Исходники в полном разрешении — по запросу. Названия заказчиков не указаны там, где работа под NDA.
 
