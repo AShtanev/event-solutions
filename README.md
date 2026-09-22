@@ -25,8 +25,8 @@ Gamified zones that earn the wow moment on site and make the brand stick afterwa
 
 | | |
 |---|---|
-| **[Interactive game on a media facade](videos/01-media-facade-game.mp4)** · 0:14<br>Camera-based motion tracking for 2–4 players at once on a large LED wall. Played with bare hands — nothing to install, nothing to hold. | **[Multiplayer racing on paired terminals](videos/02-racing-terminals.mp4)** · 0:25<br>Several touch stations networked into one race with a shared leaderboard. Scales from two seats to a full tournament zone. |
-| **[LED-wall race played from tablets](videos/03-led-wall-race.mp4)** · 0:15<br>The track runs on a long-format LED wall. Players race from tablets with a pre-installed app, while a master tablet changes race parameters on the fly. Deployed at an international motorsport championship. | **[Interactive presentation of heavy machinery](videos/04-projection-mapping-rig.mp4)** · 1:13<br>Projection onto an actual vehicle with the key figures called out on the body. A console triggers component animations and camera fly-throughs. |
+| **[Rhythm game on a media facade](videos/01-media-facade-game.mp4)** · 0:14<br>**2–4 players.** A competitive rhythm game for exhibitions where the body is the controller: players repeat the on-screen moves in time with the music, and the result reads as a synchronised dance that draws a crowd of its own. No input devices. Lighting fixtures back the on-screen graphics, every track brings its own level visuals, and a second camera puts the gameplay on a separate screen to pull more visitors in. Leaderboard with automatic export; the session is run from an administrator tablet. | **[Runner race on tablets](videos/02-racing-terminals.mp4)** · 0:25<br>**2 players.** Built on the mobile runner genre the audience already knows: players run, dodge and jump by mimicking the moves with their fingers on a tablet screen, competing on time and score. An in-game timer keeps every session the same length. Results go to the event's messenger group and tally automatically for the day and for the whole event. Lighting fixtures back the on-screen graphics; the session is run from an administrator tablet. |
+| **[Elimination race on an LED wall](videos/03-led-wall-race.mp4)** · 0:15<br>**2–8 players.** Players drive a car through a stylised tablet interface, dodging collisions and collecting bonuses; the last one running wins and the remaining places are ranked in order of elimination. The booth administrator holds the whole session on a dedicated tablet — difficulty, speed and obstacle frequency all adjust in real time. Deployed at an international motorsport championship. | **[Interactive 3D product booth](videos/04-projection-mapping-rig.mp4)** · 1:13<br>An interactive booth running a real-time 3D scene. Visitors explore the product's look and workings from a tablet, and the camera angle decides which elements they get information about. It earns its place on products that are hard to show in person or in working condition, and on things the naked eye cannot see — a manufacturing process, the internals of industrial hardware, a real or imagined place. Runs in attract mode when nobody is using it. |
 
 ## Interactive outdoor advertising
 
@@ -42,7 +42,7 @@ Street furniture that reacts to a passer-by and drives the big screen above it i
 
 | | |
 |---|---|
-| **Real-time AR graphics** · 0:32 · 0:32<br>Live at Riyadh Boulevard World, a set by a local star.<br>▶ [clip 1](videos/11-previz-stage.mp4) · [clip 2](videos/10-previz-control-room.mp4) | **XR concert for VK** · 1:00 · 0:14 · 0:21<br>Graphics rendered in real time and matched to the camera's position.<br>▶ [headpiece](videos/07-ar-headpiece.mp4) · [particles](videos/08-ar-particles.mp4) · [AR object](videos/09-ar-phone.mp4) |
+| **Real-time AR graphics** · 0:32 · 0:32<br>Live at Riyadh Boulevard World, a set by a local star.<br>▶ [clip 1](videos/11-previz-stage.mp4) · [clip 2](videos/10-previz-control-room.mp4) | **XR concert for VK** · 1:00 · 0:14 · 0:21<br>An additional layer of AR graphics over the live concert broadcast — a separate look for every song, built to work with the LED background content rather than compete with it. Rendered in real time and matched to the camera's position.<br>▶ [headpiece](videos/07-ar-headpiece.mp4) · [particles](videos/08-ar-particles.mp4) · [AR object](videos/09-ar-phone.mp4) |
 
 ## Robots on stage and in the venue
 
@@ -52,7 +52,7 @@ Robot software in detail: **[robotics-demos](https://github.com/AShtanev/robotic
 | | |
 |---|---|
 | **[Humanoid and choreographer duet — full show](videos/12-robot-dancer-show.mp4)** · 5:39<br>A humanoid performing a full duet with choreographer Alexander Mogilev at the All-Russian Competition of Ballet Dancers and Choreographers, Yoshkar-Ola. | **[Robot bartender](videos/17-robot-bartender.mp4)** · 1:19<br>A humanoid working a bar — picking up bottles, pouring and serving guests as a standing attraction. |
-| **Robot conductor — Symphony of Innovations** · 0:18 · 0:50 · 0:35<br>A humanoid on the conductor's podium for Rosconcert's show Symphony of Innovations.<br>▶ [podium](videos/13-robot-conductor-symphony.mp4) · [orchestra](videos/14-robot-conductor-orchestra.mp4) · [gala](videos/15-robot-conductor-gala.mp4) | **[VR teleoperation](videos/16-vr-teleoperation.mp4)** · 0:44<br>An operator in a headset drives the humanoid in real time; arms, hands and head follow the operator at 60 fps. Lets a live host puppeteer the robot from backstage. |
+| **Robot conductor — Symphony of Innovations** · 0:18 · 0:50 · 0:35<br>A humanoid on the conductor's podium for Rosconcert's show Symphony of Innovations. The robot is synchronised with the control booth: on its cue a video sequence starts and the stage lighting changes.<br>▶ [podium](videos/13-robot-conductor-symphony.mp4) · [orchestra](videos/14-robot-conductor-orchestra.mp4) · [gala](videos/15-robot-conductor-gala.mp4) | **[VR teleoperation](videos/16-vr-teleoperation.mp4)** · 0:44<br>An operator in a headset drives the humanoid in real time; arms, hands and head follow the operator at 60 fps. Lets a live host puppeteer the robot from backstage. |
 
 ## Work with us
 
@@ -74,10 +74,10 @@ Client names are withheld where the work is under NDA; brand marks visible on sc
 
 **Блоки:**
 
-1. **Интерактивные инсталляции и игры** — игра на медиафасаде для 2–4 человек с трекингом движения, мультиплеерная гонка на связанных терминалах, гонка на LED-экране с планшетов с мастер-планшетом для смены параметров на ходу, интерактивная презентация крупной техники с анимациями узлов и пролётами камеры.
+1. **Интерактивные инсталляции и игры** — ритм-игра на медиафасаде для 2–4 игроков, где контроллер это тело; раннер-заезд на планшетах для двоих с выгрузкой результатов в мессенджер-группу мероприятия; гонка на выбывание на LED-экране для 2–8 игроков с настройкой сложности на ходу; интерактивный стенд с 3D-сценой, где ракурс камеры определяет, о каком узле посетитель получит информацию. Все три игры ведутся с планшета администратора.
 2. **Интерактивная наружная реклама** — тач-киоск, выводящий персональный результат на городской фасад; уличная стойка, переключающая креатив одним движением слайдера.
-3. **Графика в реальном времени** — AR-графика live в Riyadh Boulevard World; XR-концерт для VK, где графика рендерится в реальном времени и подстраивается под положение камеры.
-4. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта, телеоперация через VR, робот-бармен.
+3. **Графика в реальном времени** — AR-графика live в Riyadh Boulevard World; XR-концерт для VK: дополнительный слой AR поверх трансляции, своё решение на каждую песню, в связке с контентом на LED-заднике.
+4. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта с синхронизацией по режиссёрскому пульту, телеоперация через VR, робот-бармен.
 
 Исходники в полном разрешении — по запросу. Названия заказчиков не указаны там, где работа под NDA.
 
