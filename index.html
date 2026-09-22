@@ -23,6 +23,9 @@
   header{padding:56px 0 34px; border-bottom:1px solid var(--line)}
   h1{margin:0 0 10px; font-size:clamp(28px,5.2vw,46px); line-height:1.12; letter-spacing:-.02em; font-weight:650}
   .lede{margin:0; color:var(--muted); font-size:clamp(15px,2.2vw,18px); max-width:62ch}
+  .contacts{display:flex; gap:10px 22px; flex-wrap:wrap; margin:18px 0 0; padding:0; list-style:none; font-size:14px; color:var(--muted)}
+  .contacts a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-dim)}
+  .contacts a:hover{border-bottom-color:var(--accent)}
   .bar{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:26px}
   .brand{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
   .langs{display:flex; gap:4px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:3px}
@@ -93,6 +96,11 @@
     </div>
     <h1 id="title"></h1>
     <p class="lede" id="lede"></p>
+    <ul class="contacts" aria-label="Contacts">
+      <li>Telegram: <a href="https://t.me/Ashtanev">@Ashtanev</a></li>
+      <li>Email: <a href="mailto:shtanev.andrei@yandex.ru">shtanev.andrei@yandex.ru</a></li>
+      <li>WhatsApp: <a href="https://wa.me/79645939653">+79645939653</a></li>
+    </ul>
   </header>
 
   <main id="main"></main>
