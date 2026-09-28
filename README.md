@@ -1,18 +1,19 @@
 <h1 align="center">Event Solutions</h1>
 
 <p align="center">
-  Interactive games and installations, interactive outdoor advertising, real-time graphics for live shows, and robots on stage and among the audience.<br>
+  Interactive games and installations, interactive outdoor advertising, real-time graphics for live shows, the Glambot camera rig, and robots on stage and among the audience.<br>
   Everything below was filmed at real events, on real hardware.
 </p>
 
 <p align="center">
-  <b><a href="https://ashtanev.github.io/event-solutions/">▶ Open the showcase — all 17 videos, plays on phone and tablet</a></b>
+  <b><a href="https://ashtanev.github.io/event-solutions/">▶ Open the showcase — all 21 videos, plays on phone and tablet</a></b>
 </p>
 
 <p align="center">
   <a href="#interactive-installations-and-games">Installations &amp; games</a> ·
   <a href="#interactive-outdoor-advertising">Interactive DOOH</a> ·
   <a href="#real-time-graphics">Real-time graphics</a> ·
+  <a href="#glambot">Glambot</a> ·
   <a href="#robots-on-stage-and-in-the-venue">Stage robotics</a> ·
   <a href="#work-with-us">Work with us</a>
 </p>
@@ -44,6 +45,15 @@ Street furniture that reacts to a passer-by and drives the big screen above it i
 |---|---|
 | **Real-time AR graphics** · 0:32 · 0:32<br>Live at Riyadh Boulevard World, a set by a local star.<br>▶ [clip 1](videos/11-previz-stage.mp4) · [clip 2](videos/10-previz-control-room.mp4) | **XR concert for VK** · 1:00 · 0:14 · 0:21<br>An additional layer of AR graphics over the live concert broadcast — a separate look for every song, built to work with the LED background content rather than compete with it. Rendered in real time and matched to the camera's position.<br>▶ [headpiece](videos/07-ar-headpiece.mp4) · [particles](videos/08-ar-particles.mp4) · [AR object](videos/09-ar-phone.mp4) |
 
+## Glambot
+
+A robotic arm flies the camera in front of an LED backdrop while the graphics on it parallax to the camera's motion. In the shot the backdrop stops reading as a screen and becomes a real 3D space the camera travels through.
+
+| | |
+|---|---|
+| **[Glambot on site](videos/18-glambot-main-event.mp4)** · 0:15<br>Guests pose in front of a curved LED backdrop while the arm carries the camera around them in one continuous move. The parallax on the backdrop is computed live against the camera path. | **[Broadcast coverage, Shanghai TV Festival](videos/19-glambot-press-coverage.mp4)** · 0:15<br>The rig covered on Chinese national television from the 30th Shanghai TV Festival, in the international section of the show floor. |
+| **[How the rig works](videos/20-glambot-rig-explainer.mp4)** · 0:08<br>A 3D breakdown of the setup — the arm, the LED backdrop and the subject between them, with the camera path that drives the parallax. | **[What the shot looks like](videos/21-glambot-shot-preview.mp4)** · 0:08<br>The same move from the camera's point of view: a sci-fi interior rendered on the backdrop holds its depth as the arm travels. |
+
 ## Robots on stage and in the venue
 
 Humanoid robots as part of the programme — performing, hosting and working the room, on our own control software.
@@ -70,14 +80,15 @@ Client names are withheld where the work is under NDA; brand marks visible on sc
 
 Интерактивные игры и инсталляции, интерактивная наружная реклама, графика в реальном времени для концертов и роботы на сцене и среди людей. Всё снято на реальных площадках и на реальном оборудовании.
 
-**[▶ Открыть витрину — все 17 видео, играет на телефоне и планшете](https://ashtanev.github.io/event-solutions/)** (переключатель RU в правом верхнем углу)
+**[▶ Открыть витрину — все 21 видео, играет на телефоне и планшете](https://ashtanev.github.io/event-solutions/)** (переключатель RU в правом верхнем углу)
 
 **Блоки:**
 
 1. **Интерактивные инсталляции и игры** — ритм-игра на медиафасаде для 2–4 игроков, где контроллер это тело; раннер-заезд на планшетах для двоих с выгрузкой результатов в мессенджер-группу мероприятия; гонка на выбывание на LED-экране для 2–8 игроков с настройкой сложности на ходу; интерактивный стенд с 3D-сценой, где ракурс камеры определяет, о каком узле посетитель получит информацию. Все три игры ведутся с планшета администратора.
 2. **Интерактивная наружная реклама** — тач-киоск, выводящий персональный результат на городской фасад; уличная стойка, переключающая креатив одним движением слайдера.
 3. **Графика в реальном времени** — AR-графика live в Riyadh Boulevard World; XR-концерт для VK: дополнительный слой AR поверх трансляции, своё решение на каждую песню, в связке с контентом на LED-заднике.
-4. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта с синхронизацией по режиссёрскому пульту, телеоперация через VR, робот-бармен.
+4. **Glambot** — роботизированная рука водит камеру перед LED-задником, графика на нём параллаксит вслед за камерой, и в кадре задник читается как настоящее трёхмерное пространство. Съёмка на площадке, сюжет с 30-го Шанхайского телефестиваля, разбор устройства установки и вид результата с точки зрения камеры.
+5. **Роботы на сцене и в зале** — дуэт гуманоида с хореографом Александром Могилёвым, робот-дирижёр в «Симфонии инноваций» Росконцерта с синхронизацией по режиссёрскому пульту, телеоперация через VR, робот-бармен.
 
 Исходники в полном разрешении — по запросу. Названия заказчиков не указаны там, где работа под NDA.
 
